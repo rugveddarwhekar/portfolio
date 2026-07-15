@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>rugved_s_darwhekar // sys_status: operational</title>
+  <title>rugved_darwhekar // sys_status: operational</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description"
     content="Technical Solutions & Support Engineer. AI systems builder. Deep systems debugger. San Jose, CA." />
@@ -662,6 +662,7 @@
       display: flex;
       flex-direction: column;
       gap: 8px;
+      max-width: 900px;
     }
 
     .exp-ul li {
@@ -1157,6 +1158,34 @@
       .footer {
         padding: 12px 20px;
       }
+
+      .mtr-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .phil-grid,
+      .docs-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* LARGE SCREENS */
+    @media (min-width: 1440px) {
+      .mtr-n {
+        font-size: 36px;
+      }
+
+      .mtr-cell {
+        padding: 30px 26px;
+      }
+
+      .mtr-l {
+        font-size: 11px;
+      }
+
+      .fw-intro {
+        max-width: 720px;
+      }
     }
 
     /* ABOUT / PHILOSOPHY */
@@ -1313,6 +1342,7 @@
       padding: 0 20px 22px;
       display: grid;
       gap: 14px;
+      max-width: 860px;
     }
 
     .case-row {
@@ -1369,8 +1399,14 @@
     /* METRICS */
     .mtr-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       border: 1px solid var(--border);
+    }
+
+    @media (min-width: 640px) {
+      .mtr-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
     }
 
     .mtr-cell {
@@ -1460,7 +1496,7 @@
 
   <aside class="sidebar">
     <div class="sb-logo">
-      <div class="sb-name">rugved_s_darwhekar</div>
+      <div class="sb-name">rugved_darwhekar</div>
       <div class="sb-status"><span class="dot"></span>SYS_STATUS: OPERATIONAL</div>
     </div>
     <nav class="sb-nav">
@@ -1496,7 +1532,7 @@
 
     <section id="home">
       <div class="hero-eyebrow reveal">INITIALIZING_SESSION...</div>
-      <div class="hero-name reveal" data-text="rugved_s_darw">rugved_s_darwhekar</div>
+      <div class="hero-name reveal" data-text="rugved_s_darw">rugved_darwhekar</div>
       <div class="typed-line reveal" id="typed-role"><span class="typed-cursor"></span></div>
       <div class="hero-quote reveal r-left">"Find why the queue is full, not just how to empty it faster."</div>
 
@@ -1982,6 +2018,7 @@
         <div class="cert">Google: Intro to Generative AI</div>
         <div class="cert">AWS Partner: Generative AI Essentials</div>
         <div class="cert">Android Development: UI with Kotlin</div>
+        <div class="cert">Postman: QA Engineer — Navigating the Testing Lifecycle</div>
       </div>
     </section>
 
@@ -2205,7 +2242,7 @@
     </section>
 
     <div class="footer">
-      <span>© <span id="yr"></span> RUGVED_S_DARWHEKAR // ALL RIGHTS RESERVED</span>
+      <span>© <span id="yr"></span> RUGVED_DARWHEKAR // ALL RIGHTS RESERVED</span>
       <span>SYS_VERSION: 2.1.0 // BUILD: 2026</span>
     </div>
 
@@ -2254,7 +2291,13 @@
       const t = setInterval(() => { cur = Math.min(cur + step, target); el.textContent = cur; if (cur >= target) { clearInterval(t); el.closest('.stat,.mtr-cell')?.classList.add('counted'); } }, 30);
     }
     const cobs = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.querySelectorAll('.count').forEach(animCount); cobs.unobserve(e.target); } });
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.querySelectorAll('.count').forEach(animCount);
+          e.target.querySelectorAll('.mtr-cell').forEach(c => c.classList.add('counted'));
+          cobs.unobserve(e.target);
+        }
+      });
     }, { threshold: 0.4 });
     const sr = document.querySelector('.stats-row'); if (sr) cobs.observe(sr);
     const mr = document.querySelector('.mtr-grid'); if (mr) cobs.observe(mr);
