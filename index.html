@@ -1158,6 +1158,301 @@
         padding: 12px 20px;
       }
     }
+
+    /* ABOUT / PHILOSOPHY */
+    .phil-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      margin-bottom: 28px;
+    }
+
+    .phil-card {
+      background: var(--bg2);
+      padding: 20px;
+    }
+
+    .phil-num {
+      font-size: 9px;
+      color: var(--textM);
+      letter-spacing: 0.15em;
+      margin-bottom: 10px;
+    }
+
+    .phil-txt {
+      font-size: 12px;
+      color: var(--textD);
+      line-height: 1.65;
+    }
+
+    .phil-txt strong {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* INVESTIGATION FRAMEWORK */
+    .fw-intro {
+      font-size: 12px;
+      color: var(--textD);
+      line-height: 1.75;
+      max-width: 640px;
+      margin-bottom: 26px;
+    }
+
+    .flow-track {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .flow-step {
+      flex: 1 1 150px;
+      border: 1px solid var(--border);
+      background: var(--bg2);
+      padding: 14px 12px;
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s;
+      margin-left: -1px;
+      margin-top: -1px;
+    }
+
+    .flow-step:hover,
+    .flow-step.open {
+      background: var(--accentG);
+      border-color: var(--borderB);
+    }
+
+    .flow-idx {
+      font-size: 9px;
+      color: var(--textM);
+      letter-spacing: 0.15em;
+    }
+
+    .flow-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text);
+      margin-top: 6px;
+      line-height: 1.3;
+    }
+
+    .flow-step.open .flow-label {
+      color: var(--accent);
+    }
+
+    .flow-detail {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+      border: 1px solid var(--border);
+      border-top: none;
+      background: var(--bg3);
+    }
+
+    .flow-detail.open {
+      max-height: 220px;
+    }
+
+    .flow-detail-in {
+      padding: 20px 22px;
+      font-size: 12px;
+      color: var(--textD);
+      line-height: 1.75;
+    }
+
+    /* CASE STUDIES */
+    .case-card {
+      border: 1px solid var(--border);
+      margin-top: -1px;
+      background: var(--bg2);
+    }
+
+    .case-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 20px;
+      cursor: pointer;
+      gap: 12px;
+    }
+
+    .case-tag {
+      font-size: 8px;
+      letter-spacing: 0.15em;
+      color: var(--textM);
+      text-transform: uppercase;
+    }
+
+    .case-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text);
+      margin-top: 5px;
+    }
+
+    .case-chevron {
+      font-size: 14px;
+      color: var(--textM);
+      transition: transform 0.3s;
+      flex-shrink: 0;
+    }
+
+    .case-card.open .case-chevron {
+      transform: rotate(180deg);
+      color: var(--accent);
+    }
+
+    .case-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+
+    .case-body-in {
+      padding: 0 20px 22px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .case-row {
+      border-left: 2px solid var(--border);
+      padding-left: 14px;
+    }
+
+    .case-card.open .case-row {
+      border-left-color: var(--accentD);
+    }
+
+    .case-lbl {
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .case-txt {
+      font-size: 12px;
+      color: var(--textD);
+      line-height: 1.65;
+    }
+
+    /* DOCS / PARTNERSHIP GRID */
+    .docs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .docs-card {
+      background: var(--bg2);
+      padding: 18px;
+    }
+
+    .docs-h {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+    }
+
+    .docs-p {
+      font-size: 11px;
+      color: var(--textD);
+      line-height: 1.65;
+    }
+
+    /* METRICS */
+    .mtr-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      border: 1px solid var(--border);
+    }
+
+    .mtr-cell {
+      padding: 22px 18px;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mtr-cell::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.6s ease;
+    }
+
+    .mtr-cell.counted::after {
+      transform: scaleX(1);
+    }
+
+    .mtr-n {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+
+    .mtr-l {
+      font-size: 10px;
+      color: var(--textD);
+      margin-top: 8px;
+      line-height: 1.5;
+    }
+
+    /* ARTICLES */
+    .art-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .art-card {
+      background: var(--bg2);
+      padding: 18px;
+    }
+
+    .art-tag {
+      font-size: 8px;
+      letter-spacing: 0.15em;
+      color: var(--textM);
+      text-transform: uppercase;
+    }
+
+    .art-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text);
+      margin: 8px 0 8px;
+      line-height: 1.45;
+    }
+
+    .art-status {
+      font-size: 9px;
+      color: var(--accentD);
+      letter-spacing: 0.05em;
+    }
+
+    @media (max-width: 800px) {
+      .flow-step {
+        flex: 1 1 45%;
+      }
+    }
   </style>
 </head>
 
@@ -1170,9 +1465,15 @@
     </div>
     <nav class="sb-nav">
       <a class="nav-item active" href="#home"><span class="pfx">//</span>HOME</a>
+      <a class="nav-item" href="#about"><span class="pfx">//</span>ABOUT</a>
+      <a class="nav-item" href="#framework"><span class="pfx">//</span>FRAMEWORK</a>
+      <a class="nav-item" href="#escalations"><span class="pfx">//</span>ESCALATIONS</a>
       <a class="nav-item" href="#experience"><span class="pfx">//</span>EXPERIENCE</a>
+      <a class="nav-item" href="#partnership"><span class="pfx">//</span>PARTNERSHIP</a>
       <a class="nav-item" href="#toolkit"><span class="pfx">//</span>TOOLKIT</a>
-      <a class="nav-item" href="#projects"><span class="pfx">//</span>NEURAL_PIPELINES</a>
+      <a class="nav-item" href="#documentation"><span class="pfx">//</span>DOCS</a>
+      <a class="nav-item" href="#metrics"><span class="pfx">//</span>METRICS</a>
+      <a class="nav-item" href="#automation"><span class="pfx">//</span>AUTOMATION_AI</a>
       <a class="nav-item" href="#contact"><span class="pfx">//</span>CONTACT</a>
     </nav>
     <div class="sb-foot">SAN JOSE, CA<br />OPEN: REMOTE / ONSITE<br />RELOCATE: ANYWHERE US</div>
@@ -1183,9 +1484,11 @@
     <div class="topbar">
       <div class="topbar-tabs">
         <a class="topbar-tab active" href="#home">Home: Terminal Session</a>
+        <a class="topbar-tab" href="#framework">Framework: Investigation Loop</a>
+        <a class="topbar-tab" href="#escalations">Escalations: Case Studies</a>
         <a class="topbar-tab" href="#experience">Experience: Operational Logs</a>
         <a class="topbar-tab" href="#toolkit">Toolkit: System Inventory</a>
-        <a class="topbar-tab" href="#projects">Projects: Neural Pipelines</a>
+        <a class="topbar-tab" href="#automation">Automation: AI Tooling</a>
       </div>
       <div class="topbar-right"><span id="clock">--:--:--</span>&nbsp;|&nbsp;hello@rugvedd.com</div>
     </div>
@@ -1205,12 +1508,273 @@
             ↗</span></a>
       </div>
 
+      <div class="cta-row reveal" style="margin-top:10px;">
+        <a href="#escalations" class="btn btn-g"><span>VIEW_CASE_STUDIES →</span></a>
+        <a href="#framework" class="btn btn-g"><span>READ_INVESTIGATION_FRAMEWORK →</span></a>
+      </div>
+
       <div class="open-to reveal">
         <span class="open-to-l">OPEN_TO:</span>
         <span class="tag tag-a">Solutions Engineering</span>
         <span class="tag tag-a">Technical Support Eng</span>
         <span class="tag tag-a">AI / DevEx</span>
         <span class="tag tag-a">Software Engineering</span>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="s-label">// PROCESS.MANIFEST</div>
+      <h2 class="s-head">how i work <span class="sep">//</span> <span class="acc">operating philosophy</span></h2>
+      <div class="phil-grid">
+        <div class="phil-card reveal">
+          <div class="phil-num">01</div>
+          <div class="phil-txt">Every escalation teaches something. A recurring ticket is a <strong>signal</strong>,
+            not noise, once you trace it far enough.</div>
+        </div>
+        <div class="phil-card reveal">
+          <div class="phil-num">02</div>
+          <div class="phil-txt">Support should influence product. A bug report only earns its cost when it changes
+            <strong>what engineering builds next</strong>.</div>
+        </div>
+        <div class="phil-card reveal">
+          <div class="phil-num">03</div>
+          <div class="phil-txt">Documentation scales engineers. A playbook written once should let a
+            <strong>junior engineer solve</strong> what used to require an escalation.</div>
+        </div>
+        <div class="phil-card reveal">
+          <div class="phil-num">04</div>
+          <div class="phil-txt">Automation removes repetitive work so investigation time goes to
+            <strong>the cases that actually need a human</strong>.</div>
+        </div>
+        <div class="phil-card reveal">
+          <div class="phil-num">05</div>
+          <div class="phil-txt">Customers deserve engineering-quality investigations, not a script that reroutes the
+            problem until it becomes <strong>someone else's queue</strong>.</div>
+        </div>
+      </div>
+      <div class="hero-quote reveal r-left" style="margin-top:4px;">4.5 years supporting Google's Android and
+        Generative AI orgs, in the seat where customer impact meets root cause.</div>
+    </section>
+
+    <!-- INVESTIGATION FRAMEWORK -->
+    <section id="framework">
+      <div class="s-label">// INVESTIGATION.FRAMEWORK</div>
+      <h2 class="s-head">how an issue gets solved <span class="sep">//</span> <span class="acc">the loop, not the
+          ticket</span></h2>
+      <p class="fw-intro reveal">Closing a ticket and solving a problem are different jobs. This is the loop I run
+        on every non-trivial escalation. Click a stage to expand it.</p>
+      <div class="flow-track reveal" id="flowTrack">
+        <div class="flow-step open" data-i="0" onclick="selectFlow(this)">
+          <div class="flow-idx">STAGE_00</div>
+          <div class="flow-label">Customer reports issue</div>
+        </div>
+        <div class="flow-step" data-i="1" onclick="selectFlow(this)">
+          <div class="flow-idx">STAGE_01</div>
+          <div class="flow-label">Check for existing issues</div>
+        </div>
+        <div class="flow-step" data-i="2" onclick="selectFlow(this)">
+          <div class="flow-idx">STAGE_02</div>
+          <div class="flow-label">Reproduce</div>
+        </div>
+        <div class="flow-step" data-i="3" onclick="selectFlow(this)">
+          <div class="flow-idx">STAGE_03</div>
+          <div class="flow-label">Collect evidence</div>
+        </div>
+        <div class="flow-step" data-i="4" onclick="selectFlow(this)">
+          <div class="flow-idx">STAGE_04</div>
+          <div class="flow-label">Identify subsystem</div>
+        </div>
+        <div class="flow-step" data-i="5" onclick="selectFlow(this)">
+          <div class="flow-idx">STAGE_05</div>
+          <div class="flow-label">Narrow ownership</div>
+        </div>
+        <div class="flow-step" data-i="6" onclick="selectFlow(this)">
+          <div class="flow-idx">STAGE_06</div>
+          <div class="flow-label">Validate hypothesis</div>
+        </div>
+        <div class="flow-step" data-i="7" onclick="selectFlow(this)">
+          <div class="flow-idx">STAGE_07</div>
+          <div class="flow-label">Partner with engineering</div>
+        </div>
+        <div class="flow-step" data-i="8" onclick="selectFlow(this)">
+          <div class="flow-idx">STAGE_08</div>
+          <div class="flow-label">Validate fix</div>
+        </div>
+        <div class="flow-step" data-i="9" onclick="selectFlow(this)">
+          <div class="flow-idx">STAGE_09</div>
+          <div class="flow-label">Document findings</div>
+        </div>
+        <div class="flow-step" data-i="10" onclick="selectFlow(this)">
+          <div class="flow-idx">STAGE_10</div>
+          <div class="flow-label">Improve process</div>
+        </div>
+      </div>
+      <div class="flow-detail open" id="flowDetail">
+        <div class="flow-detail-in" id="flowDetailIn"></div>
+      </div>
+    </section>
+
+    <!-- EXECUTIVE ESCALATIONS -->
+    <section id="escalations">
+      <div class="s-label">// ESCALATION.RECORDS</div>
+      <h2 class="s-head">executive escalations <span class="sep">//</span> <span class="acc">generalized case
+          studies</span></h2>
+      <p class="fw-intro reveal">Details below are generalized to protect confidential information. Structure and
+        outcomes reflect real investigations.</p>
+
+      <div class="case-card open reveal" onclick="toggleCase(this)">
+        <div class="case-top">
+          <div>
+            <div class="case-tag">★ Flagship Investigation // Multi-Window Launch Regression</div>
+            <div class="case-title">The one-second black screen: a three-activity trampoline hiding in the launch path</div>
+          </div>
+          <div class="case-chevron">▾</div>
+        </div>
+        <div class="case-body">
+          <div class="case-body-in">
+            <div class="case-row"><div class="case-lbl">Situation</div><div class="case-txt">A brief blank or black
+                window flashed on screen for about a second when users launched a first-party application on Pixel
+                devices, before the main UI became visible.</div></div>
+            <div class="case-row"><div class="case-lbl">Investigation</div><div class="case-txt">Established
+                reproducibility first, since that shapes whether you're chasing a hardware quirk or a platform-level
+                bug. It reproduced 100 percent of the time on the reported configuration, and I verified it on
+                prototype devices running early developer builds, then tracked it across successive OS releases to
+                rule out a single-build issue. Form factor testing was the most useful signal: standard phones did not
+                show it, but foldables and tablets reproduced it consistently, pointing to a window management or task
+                boundary problem specific to multi-window environments. I combined screen recordings of the launch
+                transition with ActivityManager and WindowManager transaction logs, mapping the lifecycle of the three
+                activities involved, a launcher activity, a gateway activity, and the main activity, and comparing
+                timestamps across them.</div></div>
+            <div class="case-row"><div class="case-lbl">Root cause</div><div class="case-txt">A multi-stage
+                trampoline in the app's launch flow. Tapping the icon started a lightweight, translucent entry
+                activity, which immediately routed the intent to an intermediate gateway activity owned by a separate
+                host package. WindowManager drew a window for that gateway activity and prepared its transition before
+                the final main activity even existed, and since the gateway had no content of its own, it briefly
+                rendered as an empty container before launching the real main activity in a new task and finishing
+                itself.</div></div>
+            <div class="case-row"><div class="case-lbl">Engineering collaboration</div><div class="case-txt">The fix
+                was to swap the standard drawing gateway activity for a non-drawing version. Enabling a specific
+                property on the intermediate activity told WindowManager not to render a physical container for it at
+                all, letting the preceding screen or launcher animation stay visible until the main interface was
+                fully rendered. I updated the entry point activity to route directly to this non-drawing handler,
+                removing the transient black screen.</div></div>
+            <div class="case-row"><div class="case-lbl">Validation</div><div class="case-txt">Sideloaded the fix onto
+                test devices and confirmed through system logs that the gateway activity's window was successfully
+                bypassed during the transition draw. Then ran a broader bug bash across other user journeys to confirm
+                that decoupling the gateway activity's rendering path didn't break other deep-linking workflows, and
+                that the host app and launcher could be updated independently without breaking backward
+                compatibility.</div></div>
+            <div class="case-row"><div class="case-lbl">Communication</div><div class="case-txt">Shipped through a
+                phased, flag-controlled rollout, early access, dogfood, then a gradual public release at 1 percent, 20
+                percent, and 100 percent, so telemetry and crash reporting could confirm stability before it became
+                permanent for all devices.</div></div>
+            <div class="case-row"><div class="case-lbl">Lessons learned</div><div class="case-txt">Reproducibility and
+                form-factor segmentation are often the fastest way to tell a device-specific rendering bug apart from
+                a genuine platform or window-management issue, and a fix that only hides a symptom is worth far less
+                than one that removes the extra window from existing in the first place.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-card reveal" onclick="toggleCase(this)">
+        <div class="case-top">
+          <div>
+            <div class="case-tag">Platform Regression // Hardware Release</div>
+            <div class="case-title">Thermal/battery regression escalated ahead of a hardware release</div>
+          </div>
+          <div class="case-chevron">▾</div>
+        </div>
+        <div class="case-body">
+          <div class="case-body-in">
+            <div class="case-row"><div class="case-lbl">Situation</div><div class="case-txt">An intermittent
+                thermal/battery regression appeared on a subset of pre-release devices, serious enough to threaten a
+                hardware release timeline and draw executive attention.</div></div>
+            <div class="case-row"><div class="case-lbl">Investigation</div><div class="case-txt">Bisected across
+                builds and feature flags, toggling combinations and diffing behavior to isolate the exact failing code
+                path rather than guessing from symptoms.</div></div>
+            <div class="case-row"><div class="case-lbl">Root cause</div><div class="case-txt">Traced to a specific
+                flag combination introduced in a recent build, only reproducible under a narrow device/config
+                state.</div></div>
+            <div class="case-row"><div class="case-lbl">Engineering collaboration</div><div class="case-txt">Handed
+                the owning team a confirmed diagnosis and reproduction path, prioritized against the release
+                timeline.</div></div>
+            <div class="case-row"><div class="case-lbl">Validation</div><div class="case-txt">Verified the fix
+                against the original repro and the regression suite across the affected build set before
+                sign-off.</div></div>
+            <div class="case-row"><div class="case-lbl">Communication</div><div class="case-txt">Delivered
+                plain-language status to senior stakeholders throughout, translating build-level findings into
+                release-timeline impact.</div></div>
+            <div class="case-row"><div class="case-lbl">Lessons learned</div><div class="case-txt">Stood up a
+                dedicated L2 specialist group for this regression class, so triage no longer required an ad hoc
+                escalation each time it recurred.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-card reveal" onclick="toggleCase(this)">
+        <div class="case-top">
+          <div>
+            <div class="case-tag">Biometric Auth // Unreproducible from Ticket</div>
+            <div class="case-title">Face-auth failure isolated with a custom repro app</div>
+          </div>
+          <div class="case-chevron">▾</div>
+        </div>
+        <div class="case-body">
+          <div class="case-body-in">
+            <div class="case-row"><div class="case-lbl">Situation</div><div class="case-txt">A biometric
+                authentication failure was reported that engineering could not reproduce from the ticket
+                description alone.</div></div>
+            <div class="case-row"><div class="case-lbl">Investigation</div><div class="case-txt">Wrote a custom
+                Android sample app to isolate the exact interaction sequence rather than relying on the customer's
+                account for every test.</div></div>
+            <div class="case-row"><div class="case-lbl">Root cause</div><div class="case-txt">Identified a narrow
+                timing condition in the auth flow that only surfaced under specific device state.</div></div>
+            <div class="case-row"><div class="case-lbl">Engineering collaboration</div><div class="case-txt">Handed
+                engineering a fully reproducible test case instead of a description, enabling an immediate
+                patch.</div></div>
+            <div class="case-row"><div class="case-lbl">Validation</div><div class="case-txt">Confirmed the patch
+                against the repro app across the affected device set before closing the loop.</div></div>
+            <div class="case-row"><div class="case-lbl">Communication</div><div class="case-txt">Kept customer and
+                internal stakeholders updated with concrete reproduction steps instead of an open-ended
+                "investigating" status.</div></div>
+            <div class="case-row"><div class="case-lbl">Lessons learned</div><div class="case-txt">A minimal repro is
+                usually faster to build than to keep arguing about, once it exists everyone agrees on the
+                facts.</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-card reveal" onclick="toggleCase(this)">
+        <div class="case-top">
+          <div>
+            <div class="case-tag">SDK Migration // Developer-Facing</div>
+            <div class="case-title">SDK migration blocker resolved for external developers</div>
+          </div>
+          <div class="case-chevron">▾</div>
+        </div>
+        <div class="case-body">
+          <div class="case-body-in">
+            <div class="case-row"><div class="case-lbl">Situation</div><div class="case-txt">Multiple external
+                developers across Python, Java, and Go integrations were blocked migrating to an updated
+                SDK/model version.</div></div>
+            <div class="case-row"><div class="case-lbl">Investigation</div><div class="case-txt">Audited failure
+                reports across the three languages to separate a shared root cause from language-specific
+                noise.</div></div>
+            <div class="case-row"><div class="case-lbl">Root cause</div><div class="case-txt">An undocumented
+                migration step for the new model version, silently breaking existing integrations.</div></div>
+            <div class="case-row"><div class="case-lbl">Engineering collaboration</div><div class="case-txt">Authored
+                canonical migration tooling and documentation, closing the gap engineering didn't have bandwidth to
+                prioritize.</div></div>
+            <div class="case-row"><div class="case-lbl">Validation</div><div class="case-txt">Validated the fix with
+                a sample of previously blocked developers before publishing broadly.</div></div>
+            <div class="case-row"><div class="case-lbl">Communication</div><div class="case-txt">Published guidance
+                proactively so future developers wouldn't hit the same wall.</div></div>
+            <div class="case-row"><div class="case-lbl">Lessons learned</div><div class="case-txt">A
+                support-authored migration script scaled a fix that engineering did not have time to own end to
+                end.</div></div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1227,45 +1791,48 @@
           <div class="exp-dates">OCT 2021 – PRESENT<br />4.5 YRS<br />SAN JOSE, CA</div>
         </div>
         <div class="exp-main">
-          <div class="exp-role">Technical Support & Solutions Engineer — Android · Generative AI · DevEx</div>
+          <div class="exp-role">Technical Support & Solutions Engineer — Android · ChromeOS · Generative AI</div>
           <ul class="exp-ul">
-            <li>Triaged <strong>100+ complex OS and system UI bugs weekly</strong> via deep-dive root cause analysis
-              (logcat, ADB, bugreports), maintaining a <strong>0.7% bounce rate</strong> and <strong>2% hop
-                rate</strong>, the lowest on a 40-person team supporting Android on Pixel.</li>
-            <li>Designated as the team's dedicated engineer for <strong>C-suite executive escalations</strong>, a direct
-              recognition of sustained triage accuracy, and leveraged that trust to establish and lead an <strong>L2
-                specialist group</strong> for thermal and battery regression triage.</li>
-            <li>Led a developer productivity initiative resolving SDK integration blockers across Python, Java, and Go,
-              including authoring a canonical <strong>Gemini 2.0 Flash migration script</strong> that unblocked external
-              developers.</li>
-            <li>Architected a <strong>RAG pipeline on Google Cloud (Vertex AI)</strong> using parent-child chunking,
-              BM25 + dense vector hybrid search (RRF reranking), and Qdrant, evaluated against a golden dataset with
-              RAGAS Faithfulness metrics, reducing developer feedback analysis time by <strong>70%</strong>.</li>
-            <li>Engineered an <strong>automated ticket classification system</strong> (Python, Flask) achieving
-              <strong>85% routing accuracy</strong> with a Human-in-the-Loop (HITL) grace-fail threshold for
-              low-confidence edge cases, reducing manual triage overhead and earning stakeholder buy-in for a dedicated
-              AI tooling role.
-            </li>
-            <li>Conducted <strong>build bisection on pre-release system crashes</strong> by toggling Android feature
-              flags and diffing behavior across builds to isolate exact failing code paths, directly unblocking hardware
-              release timelines.</li>
-            <li>Engineered <strong>Python scripts to process logcat and ADB streams</strong>, extracting high-signal
-              Exception and Fatal blocks to accelerate root cause identification for unreleased hardware and OS builds.
-            </li>
-            <li>Built and maintained a <strong>Hardware-in-the-Loop (HIL) automation framework</strong> for Android
-              devices using Python and Appium, converting manual hardware validation into <strong>100+ repeatable
-                automated test flows</strong>.</li>
+            <li>Own end-to-end investigation of <strong>80–100 Android and ChromeOS production issues weekly</strong>,
+              reproducing platform defects and driving root cause analysis from customer report through engineering
+              handoff, holding the <strong>lowest bounce rate (0.7%)</strong> and one of the lowest hop rates
+              (<strong>2%</strong>) across a 40-person global triage organization.</li>
+            <li>Serve as <strong>Level 2 triage engineer</strong> for Android and ChromeOS, personally processing
+              reports from Google dogfooders, external developers, testers, and internal engineers against a team
+              queue of <strong>10,000–18,000 issues monthly</strong>.</li>
+            <li>Became the dedicated support engineer for <strong>executive-level escalations</strong> across North
+              America, LATAM, and EMEA, including SVPs, VPs, GMs, and Directors, a direct result of sustained triage
+              accuracy.</li>
+            <li>Reproduce customer-reported issues across <strong>52 released and pre-release Pixel devices</strong>,
+              flashing exact builds and configuring auth states, feature flags, peripherals, and network conditions to
+              match the reported environment.</li>
+            <li>Route issues across <strong>500+ Android platform components</strong> using architecture knowledge and
+              prior investigation history, keeping misrouted issues and the engineering delay they cause rare.</li>
+            <li>Authored the team's foundational <strong>25-page Level 2 investigation and triage playbook</strong>
+              (Aug 2022), then led a 2023–2024 knowledge base rebuild using <strong>NotebookLM and a custom RAG
+                implementation</strong>, lifting triage accuracy from <strong>92% to 98%</strong>.</li>
+            <li>Built a <strong>duplicate-issue finder</strong> using ML-based similarity matching on incoming issue
+              titles and descriptions, surfacing likely duplicates before manual investigation starts and cutting time
+              to find duplicates by <strong>25%</strong>.</li>
+            <li>Founding member of the <strong>Android/ChromeOS build bisection program</strong> (est. Aug 2025),
+              averaging <strong>3 bisections weekly</strong> and automating build flashing and feature-flag
+              configuration with Python and ADB.</li>
+            <li>Led a developer productivity initiative resolving <strong>SDK integration blockers</strong> for
+              external partners across Python, Java, and Go, authoring canonical sample integrations to unblock
+              adoption.</li>
+            <li>Built a <strong>prototype RAG pipeline</strong> on Vertex AI using parent-child chunking, hybrid
+              BM25 + dense vector search (RRF reranking), and Qdrant, evaluated against a golden dataset with RAGAS
+              faithfulness metrics, reducing developer feedback analysis time by <strong>70% in internal
+                testing</strong>.</li>
             <li>Isolated a critical face-auth failure by writing a <strong>custom Android sample app</strong> to
-              reproduce the exact issue, delivering engineering a fully reproducible test case that enabled an immediate
-              patch.</li>
-            <li>Served as <strong>technical lead for junior engineers</strong>, establishing RCA best practices and
-              debugging playbooks that improved team triage accuracy from <strong>92% to 98%</strong>.</li>
+              reproduce the exact issue, delivering engineering a fully reproducible test case that enabled an
+              immediate patch.</li>
           </ul>
           <div class="chips">
             <span class="chip">Python</span><span class="chip">Vertex AI</span><span class="chip">RAG</span>
-            <span class="chip">Qdrant</span><span class="chip">Flask</span><span class="chip">Android SDK</span>
+            <span class="chip">Qdrant</span><span class="chip">NotebookLM</span><span class="chip">Android SDK</span>
             <span class="chip">ADB</span><span class="chip">Appium</span><span class="chip">GCP</span><span
-              class="chip">Gemini</span>
+              class="chip">SQL</span>
           </div>
         </div>
       </div>
@@ -1330,6 +1897,45 @@
       </div>
     </section>
 
+    <!-- ENGINEERING PARTNERSHIP -->
+    <section id="partnership">
+      <div class="s-label">// COLLABORATION.INTERFACES</div>
+      <h2 class="s-head">who i work with <span class="sep">//</span> <span class="acc">and what each interface
+          needs</span></h2>
+      <div class="docs-grid">
+        <div class="docs-card reveal">
+          <div class="docs-h">CUSTOMERS</div>
+          <div class="docs-p">Plain-language status, honest timelines, and one owner who doesn't disappear between
+            updates.</div>
+        </div>
+        <div class="docs-card reveal">
+          <div class="docs-h">ENGINEERING</div>
+          <div class="docs-p">A reproducible case, not a forwarded ticket: logs, a suspected root cause, and impact,
+            so their time goes to the fix.</div>
+        </div>
+        <div class="docs-card reveal">
+          <div class="docs-h">PRODUCT</div>
+          <div class="docs-p">Patterns across tickets surfaced early enough to influence the roadmap, not just
+            logged in the queue.</div>
+        </div>
+        <div class="docs-card reveal">
+          <div class="docs-h">PROGRAM MANAGEMENT</div>
+          <div class="docs-p">Accurate severity and timeline signals so executive updates reflect reality, not queue
+            optimism.</div>
+        </div>
+        <div class="docs-card reveal">
+          <div class="docs-h">QUALITY</div>
+          <div class="docs-p">Field regression signal that feeds back into pre-release test coverage and bisection
+            tooling.</div>
+        </div>
+        <div class="docs-card reveal">
+          <div class="docs-h">DEVELOPER RELATIONS</div>
+          <div class="docs-p">Migration blockers and integration friction translated into documentation and tooling
+            developers can self-serve.</div>
+        </div>
+      </div>
+    </section>
+
     <!-- TOOLKIT -->
     <section id="toolkit">
       <div class="s-label">// SYSTEM_INVENTORY</div>
@@ -1338,59 +1944,19 @@
       <div class="tk-grid">
         <div class="tk-card reveal">
           <div class="tk-head">AI / ML</div>
-          <div class="tk-row"><span>Vertex AI / GCP</span>
-            <div class="bar-wrap">
-              <div class="bar" data-w="90"></div>
-            </div>
-          </div>
-          <div class="tk-row"><span>RAG / LangChain</span>
-            <div class="bar-wrap">
-              <div class="bar" data-w="88"></div>
-            </div>
-          </div>
-          <div class="tk-row"><span>Gemini / LLMs</span>
-            <div class="bar-wrap">
-              <div class="bar" data-w="85"></div>
-            </div>
-          </div>
-          <div class="tk-row"><span>Qdrant / Embeddings</span>
-            <div class="bar-wrap">
-              <div class="bar" data-w="82"></div>
-            </div>
-          </div>
-          <div class="tk-row"><span>Prompt Engineering</span>
-            <div class="bar-wrap">
-              <div class="bar" data-w="87"></div>
-            </div>
-          </div>
+          <div class="tk-row"><span>Vertex AI / GCP</span><span class="sk-tag">Expert</span></div>
+          <div class="tk-row"><span>RAG / LangChain</span><span class="sk-tag">Expert</span></div>
+          <div class="tk-row"><span>Gemini / LLMs</span><span class="sk-tag">Advanced</span></div>
+          <div class="tk-row"><span>Qdrant / Embeddings</span><span class="sk-tag">Advanced</span></div>
+          <div class="tk-row"><span>Prompt Engineering</span><span class="sk-tag">Expert</span></div>
         </div>
         <div class="tk-card reveal">
           <div class="tk-head">CORE PROGRAMMING</div>
-          <div class="tk-row"><span>Python</span>
-            <div class="bar-wrap">
-              <div class="bar" data-w="92"></div>
-            </div>
-          </div>
-          <div class="tk-row"><span>Java</span>
-            <div class="bar-wrap">
-              <div class="bar" data-w="80"></div>
-            </div>
-          </div>
-          <div class="tk-row"><span>Kotlin</span>
-            <div class="bar-wrap">
-              <div class="bar" data-w="75"></div>
-            </div>
-          </div>
-          <div class="tk-row"><span>JavaScript / Node</span>
-            <div class="bar-wrap">
-              <div class="bar" data-w="70"></div>
-            </div>
-          </div>
-          <div class="tk-row"><span>SQL</span>
-            <div class="bar-wrap">
-              <div class="bar" data-w="78"></div>
-            </div>
-          </div>
+          <div class="tk-row"><span>Python</span><span class="sk-tag">Expert</span></div>
+          <div class="tk-row"><span>Java</span><span class="sk-tag">Advanced</span></div>
+          <div class="tk-row"><span>Kotlin</span><span class="sk-tag">Advanced</span></div>
+          <div class="tk-row"><span>JavaScript / Node</span><span class="sk-tag">Intermediate</span></div>
+          <div class="tk-row"><span>SQL</span><span class="sk-tag">Advanced</span></div>
         </div>
         <div class="tk-card reveal">
           <div class="tk-head">MOBILE & TOOLING</div>
@@ -1419,27 +1985,102 @@
       </div>
     </section>
 
-    <!-- PROJECTS -->
-    <section id="projects">
-      <div class="s-label">// ROOT_CAUSE_EXCELLENCE</div>
-      <h2 class="s-head">neural_pipelines <span class="sep">//</span> <span class="acc">featured work</span></h2>
+    <!-- DOCUMENTATION -->
+    <section id="documentation">
+      <div class="s-label">// KNOWLEDGE.LAYER</div>
+      <h2 class="s-head">documentation <span class="sep">//</span> <span class="acc">what scales past one
+          engineer</span></h2>
+      <div class="docs-grid">
+        <div class="docs-card reveal">
+          <div class="docs-h">PLAYBOOKS</div>
+          <div class="docs-p">Step-by-step triage guides for recurring regression classes, the reason team triage
+            accuracy moved from 92% to 98%.</div>
+        </div>
+        <div class="docs-card reveal">
+          <div class="docs-h">KNOWLEDGE BASE</div>
+          <div class="docs-p">A searchable record of prior root causes, so a new engineer's first instinct is to
+            check history, not start from zero.</div>
+        </div>
+        <div class="docs-card reveal">
+          <div class="docs-h">RUNBOOKS</div>
+          <div class="docs-p">Concrete steps for high-severity incidents: log sources, escalation contacts, and
+            rollback criteria, written before the incident, not during it.</div>
+        </div>
+        <div class="docs-card reveal">
+          <div class="docs-h">DECISION TREES</div>
+          <div class="docs-p">Ownership routing logic, subsystem, team, severity, encoded so triage doesn't depend on
+            one person's memory.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- METRICS -->
+    <section id="metrics">
+      <div class="s-label">// METRICS.SNAPSHOT</div>
+      <h2 class="s-head">what the numbers say <span class="sep">//</span> <span class="acc">measured, not
+          estimated</span></h2>
+      <div class="mtr-grid">
+        <div class="mtr-cell reveal">
+          <div class="mtr-n">80–100</div>
+          <div class="mtr-l">Android & ChromeOS production issues owned weekly</div>
+        </div>
+        <div class="mtr-cell reveal">
+          <div class="mtr-n"><span class="count" data-decimal="0.7">0</span>%</div>
+          <div class="mtr-l">Bounce rate, lowest on a 40-person team</div>
+        </div>
+        <div class="mtr-cell reveal">
+          <div class="mtr-n"><span class="count" data-target="2">0</span>%</div>
+          <div class="mtr-l">Hop rate across the same team</div>
+        </div>
+        <div class="mtr-cell reveal">
+          <div class="mtr-n">92→<span class="count" data-target="98">0</span>%</div>
+          <div class="mtr-l">Triage accuracy after playbook + knowledge base rollout</div>
+        </div>
+        <div class="mtr-cell reveal">
+          <div class="mtr-n"><span class="count" data-target="70">0</span>%</div>
+          <div class="mtr-l">Reduction in developer feedback analysis time, RAG prototype, internal testing</div>
+        </div>
+        <div class="mtr-cell reveal">
+          <div class="mtr-n"><span class="count" data-target="25">0</span>%</div>
+          <div class="mtr-l">Faster duplicate detection via ML similarity matching</div>
+        </div>
+        <div class="mtr-cell reveal">
+          <div class="mtr-n"><span class="count" data-target="52">0</span></div>
+          <div class="mtr-l">Released & pre-release Pixel devices used for reproduction</div>
+        </div>
+        <div class="mtr-cell reveal">
+          <div class="mtr-n"><span class="count" data-target="3">0</span></div>
+          <div class="mtr-l">Build bisections run weekly on average</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AUTOMATION & AI -->
+    <section id="automation">
+      <div class="s-label">// SUPPORT_AUTOMATION_AND_AI</div>
+      <h2 class="s-head">automation & AI for support <span class="sep">//</span> <span class="acc">why, not just
+          what</span></h2>
+      <p class="fw-intro reveal">The goal was never AI for its own sake. Each of these exists because a specific
+        manual process was slow, inconsistent, or didn't scale, and the design decisions below reflect that
+        constraint, not a technology checklist.</p>
 
       <div class="proj-grid">
         <div class="proj-card reveal">
           <div class="proj-head">
             <div>
               <div class="proj-type">AI Infrastructure</div>
-              <div class="proj-name">Enterprise RAG Pipeline</div>
+              <div class="proj-name">RAG Developer Feedback Pipeline</div>
             </div>
-            <div class="proj-status">● PROD</div>
+            <div class="proj-status">● PROTOTYPE</div>
           </div>
           <div class="proj-body">
             <div class="proj-prob">THE PROBLEM</div>
-            <div class="proj-desc">Developer feedback was drowning in unstructured noise. Built a production RAG system
-              on GCP to surface signal fast — evaluated with RAGAS Faithfulness metrics.</div>
+            <div class="proj-desc">Developer feedback was drowning in unstructured noise. Built and evaluated a
+              prototype retrieval pipeline to surface signal fast — validated with RAGAS faithfulness metrics against
+              a golden dataset in internal testing.</div>
             <div class="proj-metric">
               <div class="proj-mn">70%</div>
-              <div class="proj-ml">Reduction in<br />feedback analysis time</div>
+              <div class="proj-ml">Reduction in feedback<br />analysis time, internal testing</div>
             </div>
             <div class="chips" style="margin-top:0;">
               <span class="chip">Vertex AI</span><span class="chip">Qdrant</span><span
@@ -1453,24 +2094,25 @@
           <div class="proj-head">
             <div>
               <div class="proj-type">AI Tooling</div>
-              <div class="proj-name">Ticket Classifier + HITL</div>
+              <div class="proj-name">Duplicate Issue Finder</div>
             </div>
             <div class="proj-status">● ACTIVE</div>
           </div>
           <div class="proj-body">
             <div class="proj-prob">THE PROBLEM</div>
-            <div class="proj-desc">Manual triage was slow and scaled to zero. Built a classifier with Human-in-the-Loop
-              fallback so edge cases never slip and stakeholders stay in control.</div>
+            <div class="proj-desc">Investigators were re-diagnosing issues that had already been triaged. Built an ML
+              similarity matcher over incoming titles and descriptions that surfaces likely duplicates before manual
+              investigation starts.</div>
             <div class="proj-metric">
-              <div class="proj-mn">85%</div>
-              <div class="proj-ml">Automated routing<br />accuracy</div>
+              <div class="proj-mn">25%</div>
+              <div class="proj-ml">Faster time to<br />find duplicates</div>
             </div>
             <div class="chips" style="margin-top:0;">
-              <span class="chip">Python</span><span class="chip">Flask</span><span class="chip">HITL</span><span
-                class="chip">ML Classification</span>
+              <span class="chip">Python</span><span class="chip">ML Similarity Matching</span><span
+                class="chip">SQL</span>
             </div>
           </div>
-          <div class="proj-foot"><span>GRACE-FAIL THRESHOLD · LOW-CONFIDENCE ROUTING</span></div>
+          <div class="proj-foot"><span>SURFACES DUPLICATES PRE-INVESTIGATION</span></div>
         </div>
 
         <div class="proj-card reveal">
@@ -1605,16 +2247,66 @@
       if (dec) {
         let v = 0, target = parseFloat(dec), steps = 40;
         const inc = target / steps;
-        const t = setInterval(() => { v = Math.min(+(v + inc).toFixed(1), target); el.textContent = v; if (v >= target) { clearInterval(t); el.closest('.stat')?.classList.add('counted'); } }, 30);
+        const t = setInterval(() => { v = Math.min(+(v + inc).toFixed(1), target); el.textContent = v; if (v >= target) { clearInterval(t); el.closest('.stat,.mtr-cell')?.classList.add('counted'); } }, 30);
         return;
       }
       const target = +el.dataset.target; let cur = 0; const step = Math.ceil(target / 40);
-      const t = setInterval(() => { cur = Math.min(cur + step, target); el.textContent = cur; if (cur >= target) { clearInterval(t); el.closest('.stat')?.classList.add('counted'); } }, 30);
+      const t = setInterval(() => { cur = Math.min(cur + step, target); el.textContent = cur; if (cur >= target) { clearInterval(t); el.closest('.stat,.mtr-cell')?.classList.add('counted'); } }, 30);
     }
     const cobs = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.querySelectorAll('.count').forEach(animCount); cobs.unobserve(e.target); } });
     }, { threshold: 0.4 });
     const sr = document.querySelector('.stats-row'); if (sr) cobs.observe(sr);
+    const mr = document.querySelector('.mtr-grid'); if (mr) cobs.observe(mr);
+
+    // Investigation framework: interactive stages
+    const flowDetails = [
+      "A ticket lands with a symptom, not a cause: a crash, a missing sync, a feature that silently fails for one account type. The first job is separating what the customer observed from what they assume happened.",
+      "Search open and resolved tickets for the same symptom before doing anything else. A five-minute duplicate check can save hours of redundant investigation, and if it's already been triaged, the fastest fix is linking to the existing root cause instead of starting over.",
+      "Reproduce on a controlled build before touching anything else. If it can't be reproduced, the investigation stays speculative, so I build a minimal repro first, even a throwaway sample app, before asking engineering to look at anything.",
+      "Pull logcat, ADB output, and bugreports around the exact failure window. Evidence beats description every time, a stack trace narrows a long investigation down to minutes.",
+      "Map the symptom to the subsystem: platform service, third-party integration, data sync layer, or client app. Getting this wrong wastes an engineering team's week.",
+      "Bisect across builds or feature flags to isolate the exact commit or config that introduced the regression, so the right owner gets looped in on the first pass, not the third.",
+      "Test the working theory against the evidence before presenting it. A hypothesis that survives being challenged quietly is worth more than one that falls apart in front of engineering.",
+      "Hand off a fully reproducible case with logs, a suspected root cause, and customer impact, not a forwarded ticket. Engineering time is expensive, spend it on the fix, not the diagnosis.",
+      "Confirm the fix against the original repro and the customer's environment before closing anything. A fix that works in staging but not in the field just reopens the ticket later.",
+      "Write the playbook entry while the details are fresh: symptom, root cause, fix, and how to recognize it faster next time. This is what turns one investigation into institutional memory.",
+      "Ask what changed so this doesn't recur: a new automated check, an escalation template, a rule added to the routing classifier. Closing the loop is the difference between triage and engineering."
+    ];
+    const flowDetailIn = document.getElementById('flowDetailIn');
+    if (flowDetailIn) flowDetailIn.textContent = flowDetails[0];
+    function selectFlow(el) {
+      document.querySelectorAll('.flow-step').forEach(s => s.classList.remove('open'));
+      el.classList.add('open');
+      const i = +el.dataset.i;
+      const detail = document.getElementById('flowDetail');
+      detail.classList.remove('open');
+      setTimeout(() => { flowDetailIn.textContent = flowDetails[i]; detail.classList.add('open'); }, 180);
+    }
+
+    // Case study toggles
+    function toggleCase(el) {
+      const body = el.querySelector('.case-body');
+      const isOpen = el.classList.contains('open');
+      if (isOpen) {
+        body.style.maxHeight = body.scrollHeight + 'px';
+        requestAnimationFrame(() => { body.style.maxHeight = '0px'; });
+        el.classList.remove('open');
+      } else {
+        el.classList.add('open');
+        body.style.maxHeight = body.scrollHeight + 'px';
+        body.addEventListener('transitionend', function onEnd() {
+          if (el.classList.contains('open')) body.style.maxHeight = 'none';
+          body.removeEventListener('transitionend', onEnd);
+        });
+      }
+    }
+    window.addEventListener('load', () => {
+      document.querySelectorAll('.case-card.open .case-body').forEach(b => { b.style.maxHeight = b.scrollHeight + 'px'; });
+    });
+    window.addEventListener('resize', () => {
+      document.querySelectorAll('.case-card.open .case-body').forEach(b => { if (b.style.maxHeight !== '0px') b.style.maxHeight = 'none'; });
+    });
 
     // Skill bars
     const bobs = new IntersectionObserver((entries) => {
@@ -1623,7 +2315,7 @@
     document.querySelectorAll('.tk-card').forEach(c => bobs.observe(c));
 
     // Active nav
-    const secs = ['home', 'experience', 'toolkit', 'projects', 'contact'];
+    const secs = ['home', 'about', 'framework', 'escalations', 'experience', 'partnership', 'toolkit', 'documentation', 'metrics', 'automation', 'contact'];
     const navEls = document.querySelectorAll('.nav-item');
     const tabEls = document.querySelectorAll('.topbar-tab');
     function setActive(id) {
